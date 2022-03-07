@@ -1,3 +1,3 @@
 # GrassBandits
-This is a website promoting my lawncare company, The Grass Bandits.
-This is my second repository.
+Lawncare for the Fairway Triangle. Go to Tompseymour@gmail.com to let us know if you need a job.
+
