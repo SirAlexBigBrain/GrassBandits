@@ -96,11 +96,13 @@ function serv() {
     document.getElementById("services").innerHTML = text;
     document.getElementById("viewserv").innerHTML = "Hide Servcies";
     status = false;
+    return null;
   }
   if (status == false) {
     document.getElementById("services").innerHTML = "";
     document.getElementById("viewserv").innerHTML = "View Services";
     status = true;
+    return null;
   }
 }
 </script>
