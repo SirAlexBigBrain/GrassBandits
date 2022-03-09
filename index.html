@@ -11,7 +11,7 @@ h1, h2, h3, p, li {
   color: white;
   font-family: sans-serif;
 }
-button {
+.button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -84,7 +84,8 @@ nav {
 <h1>Grass Bandits</h1>
 <h2>Anywhere in the Fairway Triangle</h2>
 <h3>We have many cheap services. Click on this button to find out what they are! Cheap, Cheap, Cheap!</h3>
-<button onclick="serv()">View Services</button>
+<button class="button" onclick="serv()">View Services</button>
+<a class="button" href="mailto:tompseymour@gmail.com">Contact Us!</a>
 <div id="services"></div>
 <script>
 text = "<ul><li>Lawnmowing</li><li>Gardening</li><li>Trimming</li><li>Blowing</li><li>Weeding</li><li>Rick Rolling (just kidding)</li></ul>";
@@ -92,11 +93,7 @@ function serv() {
   document.getElementById("services").innerHTML = text;
 }
 </script>
-  <div>
-    <img src="D2732667-364A-43CE-B17F-F84E69988B53.jpeg" 
-     width="1000" 
-     height="300" />
-   <a href="Contact.html">How to Contact Us!</a> 
-  </div>
+<br>
+<img src="D2732667-364A-43CE-B17F-F84E69988B53.jpeg" width="1000" height="300">
 </body>
 </html>
