@@ -1,0 +1,52 @@
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #f1f1f1; color: black;}
+</style>
+</head>
+<body>
+<nav>
+<div class="dropdown">
+<button class="dropbtn"><b>Grass Bandits</b></button>
+<div class="dropdown-content">
+</div>
+</div>
+<div class="dropdown">
+<a class="navbar" href="index.html"><b>Home</b></a>
+<div class="dropdown-content">
+</div>
+</div>
+<div class="dropdown">
+<button class="dropbtn">Services</button>
+<div class="dropdown-content">
+<a href="lawnmowing.html">Lawnmowing</a>
+<a href="gardening.html">Gardening</a>
+<a href="trimming.html">Trimming</a>
+<a href="blowing.html">Blowing</a>
+<a href="weeding.html">Weeding</a>
+</div>
+</div>
+</nav>
+</body>
+</html>
