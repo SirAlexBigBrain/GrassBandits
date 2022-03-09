@@ -1,36 +1,39 @@
 <html>
 <head>
 <title>Grass Bandits</title>
-  <style>
-    body {
-      background: rgb(0,127,0);
-      background: linear-gradient(90deg, rgba(0,127,0,1) 0%, rgba(0,255,0,1) 50%, rgba(69,69,69,1) 100%);
-      font-family: sans-serif;
-    }
-    h1, h2 {
-      color: white;
-      font-family: sans-serif;
-    }
-  </style>
+<style>
+body {
+  background: rgb(0,127,0);
+  background: linear-gradient(90deg, rgba(0,127,0,1) 0%, rgba(0,255,0,1) 50%, rgba(0,127,0,1) 100%);
+  font-family: sans-serif;
+}
+h1, h2 {
+  color: white;
+  font-family: sans-serif;
+}
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
 </head>
 <body>
-  <nav>
-    <button class="dropbtn">Dropdown</button>
-<div class="dropdown-content">
-<a href="Services.html">Mowing</a>
-<a href="#">Button 2</a>
-<a href="#">Button 3</a>
-<a href="#">Button 4</a>
-</div>
-  </nav>
 <h1>Grass Bandits</h1>
 <h2>Anywhere in the Fairway Triangle</h2>
-  <h3>Cheap, Cheap, Cheap!</h2>
+<h3>Cheap, Cheap, Cheap!</h2>
+<button onclick="serv()">View Services</button>
+<div id="services"></div>
 <script>
-alert("We have many cheap services. Click on this button to find out what they are!");
+text = "We have many cheap services. Click on this button to find out what they are!";
+function serv() {
+  document.getElementById("services").innerHTML = text;
+} 
 </script>
-  <?php
-echo "ur mom"
-?>
 </body>
 </html>
