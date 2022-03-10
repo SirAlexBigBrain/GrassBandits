@@ -1,8 +1,7 @@
 <html>
 <head>
 <title>Grass Bandits</title>
-  <link rel="stylesheet" href="style.css">
-
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <nav>
@@ -36,23 +35,11 @@
 <div id="services"></div>
 <script>
 text = "<ul><li>Lawnmowing</li><li>Gardening</li><li>Trimming</li><li>Blowing</li><li>Weeding</li><li>Rick Rolling (just kidding)</li></ul>";
-status = true;
 function serv() {
-  if (status == true) {
-    document.getElementById("services").innerHTML = text;
-    document.getElementById("viewserv").innerHTML = "Hide Servcies";
-    status = false;
-    return null;
-  }
-  if (status == false) {
-    document.getElementById("services").innerHTML = text;
-    document.getElementById("viewserv").innerHTML = "View Services";
-    status = true;
-    return null;
-  }
+  document.getElementById("services").innerHTML = text;
 }
 </script>
 <br>
-<img src="D2732667-364A-43CE-B17F-F84E69988B53.jpeg" width="1000" height="300">
+<img src="progress.jpeg" width="1000" height="300">
 </body>
 </html>
