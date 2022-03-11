@@ -51,4 +51,5 @@ nav {
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #f1f1f1; color: black;}
+.dropdown:hover .dropbtn {background-color: #f1f1f1; color: black;
+}
