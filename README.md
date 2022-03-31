@@ -9,4 +9,5 @@ We also support winter and fall activities.
  
 \- *@*__Techdudie (The Code Master)__ 
 
+\- *@*__SomeOtherPeople (Who can't code)__
 
