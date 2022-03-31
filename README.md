@@ -4,5 +4,9 @@ Lawncare for the Fairway Triangle, Kansas. <a class="button" href="tel:911">Cont
 We also support winter and fall activities.
 
 \- *@*__SirAlexBigBrain (The Bee)__
+  
+\- *@*__Hardwaregore (The Destroyer of Hardware)__
+ 
+\- *@*__Techdudie (The Code Master)__ 
 
 
