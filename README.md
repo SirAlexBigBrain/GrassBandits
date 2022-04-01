@@ -1,3 +1,4 @@
+![AB896EDD-C780-4C53-AF21-A79DD1EB1FE4](https://user-images.githubusercontent.com/98426972/161321888-817820c0-5e99-472d-84a5-001144aa35d3.gif)
 # GrassBandits
 
 Lawncare for the Fairway Triangle, Kansas. <a class="button" href="tel:911">Contact Us!<a> if you need our services.
