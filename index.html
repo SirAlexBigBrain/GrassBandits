@@ -78,12 +78,16 @@ function services() {
       quantitySelect.style.visibility = "visible";
     }
     var orderDescription = 'Lawn Services';
+    if(orderDescription === '') {
+      orderDescription = 'Item';
+    }
     paypal.Buttons({
       style: {
         shape: 'rect',
-        color: 'green',
+        color: 'blue',
         layout: 'vertical',
         label: 'pay',
+        
       },
       createOrder: function(data, actions) {
         var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
@@ -135,9 +139,17 @@ function services() {
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(orderData) {
+          
+          // Full available details
           console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+          // Show a success message within this page, e.g.
           const element = document.getElementById('paypal-button-container');
-          element.innerHTML = '<h3>Thank you for your payment! Make sure you include your PayPal information in your contact email!</h3>';
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+          // Or go to another URL:  actions.redirect('thank_you.html');
+
         });
       },
       onError: function(err) {
@@ -147,6 +159,7 @@ function services() {
   }
   initPayPalButton();
     </script>
+
 <!-- END PAYPAL SERVICES CODE -->
 
 </body>
