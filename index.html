@@ -23,8 +23,8 @@
 <a href="trimming.html">Trimming</a>
 <a href="blowing.html">Blowing</a>
 <a href="weeding.html">Weeding</a>
-  <a href="watering.html">Watering</a>
-  <a href="package.html">Full Package</a>
+<a href="watering.html">Watering</a>
+<a href="package.html">Full Package</a>
 </div>
 </div>
 <div class="dropdown">
@@ -32,28 +32,118 @@
 <div class="dropdown-content">
 </div>
 </div>
-  <div class="dropdown">
-    <a class="navbar" href="about.html"><b>About</b></a>
-    <div clas="dropdown-content">
-    </div>
-  </div>
+<div class="dropdown">
+<a class="navbar" href="about.html"><b>About</b></a>
+<div class="dropdown-content">
+</div>
+</div>
 </nav>
 <h1>Grass Bandits</h1>
 <h2>Anywhere in the Fairway Triangle</h2>
 <h3>We have many cheap services. Click on this button to find out what they are! Cheap, Cheap, Cheap!</h3>
-<button id="viewserv" class="button" onclick="serv()">View Services</button>
+<button id="viewserv" class="button" onclick="services()">View Services</button>
 <a class="button" href="mailto:tompseymour@gmail.com?subject=Buisness&body=I%20have%20a%20job%20for%20you%2E%0A%0AAddress%3A%20%0AJob%20Type%3A%0A%0AWe%20will%20reply%20to%20you%20with%20your%20estamated%20cost%2E%0AHave%20a%20nice%20day%21%0A%2DGrass%20Bandits">Contact Us!</a>
-<a class="button" href="tel:911">Call Us!<a>
+<a class="button" href="tel:913-749-9002">Call Us!<a>
 <div id="services"></div>
 <script>
 text = "<ul><li>Lawnmowing</li><li>Gardening</li><li>Trimming</li><li>Blowing</li><li>Weeding</li><li>Watering</li><li>Full Package<li>Rick Rolling (just kidding… or are we? Muwah Hah Hah Ha)</li></ul>";
-function serv() {
+function services() {
   document.getElementById("services").innerHTML = text;
 }
 </script>
 <br>
 <img src="progress.jpeg" width="800" height="400">
-  <h5>Note: Not actually resulting from our services.</h4>
+<h5>Note: Not actually resulting from our services.</h5>
+<div id="smart-button-container">
+<div style="text-align: center;">
+<div style="margin-bottom: 1.25rem;">
+<p>Lawn Services</p>
+<select id="item-options"><option value="Lawn Mowing" price="20">Lawn Mowing - 20 USD</option><option value="Gardening" price="20">Gardening - 20 USD</option><option value="Trimming" price="20">Trimming - 20 USD</option><option value="Blowing" price="20">Blowing - 20 USD</option><option value="Weeding" price="20">Weeding - 20 USD</option><option value="Watering" price="20">Watering - 20 USD</option><option value="Seeding" price="20">Seeding - 20 USD</option><option value="Full Package" price="20">Full Package - 20 USD</option></search>
+<select style="visibility: hidden" id="quantitySelect"></select>
+</div>
+<div id="paypal-button-container"></div>
+</div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script>
+function initPayPalButton() {
+  var shipping = 1;
+  var itemOptions = document.querySelector("#smart-button-container #item-options");
+  var quantity = parseInt();
+  var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+  if (!isNaN(quantity)) {
+    quantitySelect.style.visibility = "visible";
+  }
+  var orderDescription = 'Lawn Services';
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'green',
+      layout: 'vertical',
+      label: 'pay',
+    },
+    createOrder: function(data, actions) {
+      var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+      var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+      var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+      if (quantitySelect.options.length > 0) {
+        quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+      } else {
+        quantity = 1;
+      }
+      tax *= quantity;
+      tax = Math.round(tax * 100) / 100;
+      var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+      priceTotal = Math.round(priceTotal * 100) / 100;
+      var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+      return actions.order.create({
+        purchase_units: [{
+          description: orderDescription,
+          amount: {
+            currency_code: 'USD',
+            value: priceTotal,
+            breakdown: {
+              item_total: {
+                currency_code: 'USD',
+                value: itemTotalValue,
+              },
+              shipping: {
+                currency_code: 'USD',
+                value: shipping,
+              },
+              tax_total: {
+                currency_code: 'USD',
+                value: tax,
+              }
+            }
+          },
+          items: [{
+            name: selectedItemDescription,
+            unit_amount: {
+              currency_code: 'USD',
+              value: selectedItemPrice,
+            },
+            quantity: quantity
+          }]
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(orderData) {
+        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+        const element = document.getElementById('paypal-button-container');
+        element.innerHTML = '';
+        element.innerHTML = '<h3>Thank you for your payment!</h3>';
+        actions.redirect('thank_you.html');
+      });
+    },
+    onError: function(err) {
+      console.log(err);
+    },
+  }).render('#paypal-button-container');
+}
+initPayPalButton();
+</script>
 </body>
 </html>
 
