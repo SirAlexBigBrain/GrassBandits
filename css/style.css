@@ -60,6 +60,6 @@ iframe {
   width: 100%
 }
 
-img {
+img, div {
   display: inline-block;
 }
