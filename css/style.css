@@ -62,4 +62,5 @@ iframe {
 
 img, div {
   display: inline-block;
+  float: left;
 }
