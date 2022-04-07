@@ -19,6 +19,7 @@ h1, h2, h3, p, li {
 }
 nav {
   background-color: black;
+  height: 64px;
 }
 .navbar {
   background-color: black;
