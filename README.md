@@ -1,4 +1,4 @@
-do not edit unless your name is @TechDudie. Especially you @Hardwaregore DO NOT MAKE ANY CHANGES I AM REWRITING EVERYTHING GO AWAY RIGHT NOW
+
 
 ![AB896EDD-C780-4C53-AF21-A79DD1EB1FE4](https://user-images.githubusercontent.com/98426972/161321888-817820c0-5e99-472d-84a5-001144aa35d3.gif)
 # GrassBandits
