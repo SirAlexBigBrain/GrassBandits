@@ -13,7 +13,7 @@
 </div>
 </div>
 <div class="dropdown">
-<a href="index.html"><button class="dropbtn" href="#"><b>Home</b></button></a>
+<a href="index.html"><button class="dropbtn" href="index.html"><b>Home</b></button></a>
 <div class="dropdown-content">
 </div>
 </div>
@@ -52,15 +52,15 @@
 <a class="button" href="tel:913-749-9002">Call Us!<a>
 <div id="services"></div>
 <script>
-text = "<ul><li>Lawnmowing</li><li>Gardening</li><li>Trimming</li><li>Blowing</li><li>Weeding</li><li>Watering</li><li>Full Package<li>Rick Rolling (just kidding… or are we? Muwah Hah Hah Ha)</li></ul>";
+text = "<ul><li>Lawnmowing</li><li>Gardening</li><li>Trimming</li><li>Blowing</li><li>Weeding</li><li>Watering</li><li>Full Package<li>Rick Rolling (just kidding… or are we? Muwah Hah Hah Ha)</li></ul>";
 function services() {
-  document.getElementById("services").innerHTML = text;
+  document.getElementById("services").innerHTML = text;
 }
 </script>
 <br><img src="logo.png" width="200" height="170">
 <div id="smart-button-container">
-      <div style="text-align: center;">
-        <div style="margin-bottom: 1.25rem;">
+      <div style="text-align: center;">
+        <div style="margin-bottom: 1.25rem;">
           <p>Lawn Services</p>
           <select id="item-options"><option value="Lawnmowing" price="7">Lawnmowing - 7 USD</option><option value="Gardening" price="5">Gardening - 5 USD</option><option value="Trimming" price="5">Trimming - 5 USD</option><option value="Weeding" price="5">Weeding - 5 USD</option><option value="Blowing" price="4">Blowing - 4 USD</option><option value="Watering" price="2">Watering - 2 USD</option><option value="Seeding" price="2">Seeding - 2 USD</option><option value="Full Package" price="25">Full Package - 25 USD</option></select>
           <select style="visibility: hidden" id="quantitySelect"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
@@ -71,16 +71,16 @@ function services() {
     <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
     <script>
       function initPayPalButton() {
-        var shipping = 0;
-        var itemOptions = document.querySelector("#smart-button-container #item-options");
-    var quantity = parseInt(4);
-    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+        var shipping = 0;
+        var itemOptions = document.querySelector("#smart-button-container #item-options");
+    var quantity = parseInt(4);
+    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
     if (!isNaN(quantity)) {
-      quantitySelect.style.visibility = "visible";
+      quantitySelect.style.visibility = "visible";
     }
-    var orderDescription = 'Lawn Services';
+    var orderDescription = 'Lawn Services';
     if(orderDescription === '') {
-      orderDescription = 'Item';
+      orderDescription = 'Item';
     }
     paypal.Buttons({
       style: {
@@ -91,20 +91,20 @@ function services() {
         
       },
       createOrder: function(data, actions) {
-        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
-        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
-        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
         if(quantitySelect.options.length > 0) {
-          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
         } else {
-          quantity = 1;
+          quantity = 1;
         }
 
-        tax *= quantity;
-        tax = Math.round(tax * 100) / 100;
-        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
-        priceTotal = Math.round(priceTotal * 100) / 100;
-        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+        tax *= quantity;
+        tax = Math.round(tax * 100) / 100;
+        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+        priceTotal = Math.round(priceTotal * 100) / 100;
+        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
 
         return actions.order.create({
           purchase_units: [{
@@ -136,32 +136,32 @@ function services() {
               quantity: quantity
             }]
           }]
-        });
+        });
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(orderData) {
           
           // Full available details
-          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
 
           // Show a success message within this page, e.g.
-          const element = document.getElementById('paypal-button-container');
-          element.innerHTML = '';
-          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+          const element = document.getElementById('paypal-button-container');
+          element.innerHTML = '';
+          element.innerHTML = '<h3>Thank you for your payment!</h3>';
 
-          // Or go to another URL:  actions.redirect('thank_you.html');
+          // Or go to another URL:  actions.redirect('thank_you.html');
 
-        });
+        });
       },
       onError: function(err) {
-        console.log(err);
+        console.log(err);
       },
-    }).render('#paypal-button-container');
+    }).render('#paypal-button-container');
   }
-  initPayPalButton();
+  initPayPalButton();
     </script>
 <h1>Use this handy dandy map to pinpoint where you need our services!</h1>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18909.24615760799!2d-94.63471429571321!3d39.02963525276926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0ee61141ff519%3A0x8c1852dd6184d151!2sFairway%2C%20KS%2066205!5e0!3m2!1sen!2sus!4v1649277249128!5m2!1sen!2sus" width="800" height="800" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18909.24615760799!2d-94.63471429571321!3d39.02963525276926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0ee61141ff519%3A0x8c1852dd6184d151!2sFairway%2C%20KS%2066205!5e0!3m2!1sen!2sus!4v1649277249128!5m2!1sen!2sus" width="800" height="800" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   <h4>Just so you know, THIS IS NOT A PRANK!</h4>
   </body>
 </html>
