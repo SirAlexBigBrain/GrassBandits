@@ -1,2 +1,2 @@
 ### @Hardwaregore & @TechnoDot
-Guys, please do not mess with the code, unless explicitly stated otherwise.
+Guys, please do mess with the code, unless explicitly stated otherwise.
