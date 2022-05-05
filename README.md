@@ -5,6 +5,5 @@ We also support winter and fall activities.
 ### __Made by:__
 * __@SirAlexBigBrain (The Bee)____
 * __@TechDudie (The Code Master)____
-* __@Hardwaregore (The Almighty Smasher of Hardware)____
 ![0A2ED4AD-19D6-4365-97BF-DEE20755E88B](https://user-images.githubusercontent.com/98426972/161281604-29c839c2-eae6-406f-ab0b-6f4d29fc99cd.gif)
 
